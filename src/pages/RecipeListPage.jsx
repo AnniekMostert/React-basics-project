@@ -1,15 +1,27 @@
-import { Center, Heading } from "@chakra-ui/react";
-import { data } from "../utils/data";
-import { RecipeList } from "../components/RecipeList";
+import { useState } from "react";
 import "./RecipeListPage.css";
+import { RecipeCard } from "../components/RecipeCard";
+import { Input, SimpleGrid, Center } from "@chakra-ui/react";
 
-export const RecipeListPage = () => {
+export const RecipeListPage = ({ recipeList, clickFn }) => {
+  const [searchField, setSearchField] = useState("");
+
+  const handleChange = (event) => {
+    return setSearchField(event.target.value);
+  };
+
+  const matchedRecipes = recipeList.filter(({ recipe }) => {
+    return recipe.label.toLowerCase().includes(searchField.toLowerCase());
+  });
+
+  const matchedRecipeList = matchedRecipes.map(({ recipe }) => (
+    <RecipeCard key={recipe.label} recipe={recipe} clickFn={clickFn} />
+  ));
+
   return (
-    <Center h="100vh" flexDir="column">
-      <Heading>Your Recipe App</Heading>
-      <ul>
-        <RecipeList data={data.hits} />
-      </ul>
+    <Center >
+      <Input onChange={handleChange} placeholder="Search for recipes" focusBorderColor="palette.greenDark" width={{base: "90%", sm: "70%"}} my={3} />
+      <SimpleGrid>{matchedRecipeList}</SimpleGrid>
     </Center>
   );
 };
