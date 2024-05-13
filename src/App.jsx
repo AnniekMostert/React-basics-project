@@ -1,4 +1,4 @@
-import { Center, Container, Heading } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
 import { RecipeListPage } from './pages/RecipeListPage';
 import { useState } from 'react';
 import { RecipePage } from './pages/RecipePage';

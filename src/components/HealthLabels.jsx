@@ -1,11 +1,13 @@
+import { Flex, Tag } from "@chakra-ui/react";
+
 export const HealthLabels = ({recipe}) => {
-    const findVegan = (label) => label === "Vegan";
-    const findVegetarian = (label) => label === "Vegetarian";
+    const vegan = recipe.healthLabels.find((label) => label === "Vegan");
+    const vegetarian = recipe.healthLabels.find((label) => label === "Vegetarian");
     
     return (
-      <ul>
-        <li>{recipe.healthLabels.find(findVegan)}</li>
-        <li>{recipe.healthLabels.find(findVegetarian)}</li>
-      </ul>
+      <Flex justify="space-evenly">
+        {vegan && <Tag>{vegan.toUpperCase()}</Tag>}
+        {vegetarian && <Tag>{vegetarian.toUpperCase()}</Tag>}
+      </Flex>
     );
   };

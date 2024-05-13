@@ -1,9 +1,11 @@
+import { Flex, Tag } from "@chakra-ui/react";
+
 export const DietLabels = ({recipe}) => {
   return (
-    <ul>
+    <Flex justify="space-evenly">
       {recipe.dietLabels.map((label) => (
-        <li key={label}>{label}</li>
+        <Tag key={label}>{label}</Tag>
       ))}
-    </ul>
+    </Flex>
   );
 };

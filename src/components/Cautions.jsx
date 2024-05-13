@@ -1,9 +1,11 @@
+import { Flex, Tag } from "@chakra-ui/react";
+
 export const Cautions = ({recipe}) => {
     return (
-      <ul>
-        {recipe.cautions.map((label) => (
-          <li key={label}>{label}</li>
-        ))}
-      </ul>
+      <Flex justify="space-evenly">
+      {recipe.cautions.map((label) => (
+        <Tag key={label}>{label}</Tag>
+      ))}
+    </Flex>
     );
   };

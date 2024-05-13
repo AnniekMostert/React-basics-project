@@ -19,8 +19,13 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
   ));
 
   return (
-    <Center >
-      <Input onChange={handleChange} placeholder="Search for recipes" focusBorderColor="palette.greenDark" width={{base: "90%", sm: "70%"}} my={3} />
+    <Center>
+      <Input
+        onChange={handleChange}
+        placeholder="Search for recipes"
+        width={{ base: "90%", sm: "70%", md: "500px" }}
+        my={3}
+      />
       <SimpleGrid>{matchedRecipeList}</SimpleGrid>
     </Center>
   );

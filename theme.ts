@@ -15,14 +15,14 @@ export const theme = extendTheme({
       greenDark: "#4b5f22",
     },
   },
-  //   styles: {
-  //     global: {
-  //       body: {
-  //         color: "teal.800",
-  //         width: "100%",
-  //       },
-  //     },
-  //   },
+    styles: {
+      global: {
+        body: {
+          color: "palette.greenDark",
+          width: "100%",
+        },
+      },
+    },
   components: {
     Input: inputTheme
   },
