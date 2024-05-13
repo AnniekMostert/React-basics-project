@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "./RecipeListPage.css";
 import { RecipeCard } from "../components/RecipeCard";
-import { Input, SimpleGrid, Center } from "@chakra-ui/react";
+import { Input, SimpleGrid, Flex } from "@chakra-ui/react";
 
 export const RecipeListPage = ({ recipeList, clickFn }) => {
   const [searchField, setSearchField] = useState("");
@@ -19,14 +18,14 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
   ));
 
   return (
-    <Center>
+    <Flex flexDirection="column" alignItems="center" px="15px">
       <Input
         onChange={handleChange}
         placeholder="Search for recipes"
         width={{ base: "90%", sm: "70%", md: "500px" }}
         my={3}
       />
-      <SimpleGrid>{matchedRecipeList}</SimpleGrid>
-    </Center>
+      <SimpleGrid width="100%" minChildWidth="250px" spacing="15px" >{matchedRecipeList}</SimpleGrid>
+    </Flex>
   );
 };

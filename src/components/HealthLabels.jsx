@@ -6,8 +6,8 @@ export const HealthLabels = ({recipe}) => {
     
     return (
       <Flex justify="space-evenly">
-        {vegan && <Tag>{vegan.toUpperCase()}</Tag>}
-        {vegetarian && <Tag>{vegetarian.toUpperCase()}</Tag>}
+        {vegan && <Tag variant="health">{vegan}</Tag>}
+        {vegetarian && <Tag variant="health" >{vegetarian}</Tag>}
       </Flex>
     );
   };
