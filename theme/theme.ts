@@ -8,7 +8,6 @@ export const theme = extendTheme({
     palette: {
       yellowLight: "#FFF9E0",
       yellowDark: "#F1C550",
-      red: "#EA4C4C",
       greenLight: "#A1C45A",
       greenDark: "#4b5f22",
     },

@@ -3,7 +3,6 @@ import { Cautions } from "./Cautions";
 import { HealthLabels } from "./HealthLabels";
 import {
   Container,
-  Heading,
   Image,
   Text,
   Center,
@@ -28,16 +27,16 @@ export const RecipeCard = ({ recipe, clickFn }) => {
           borderTopRadius="10px"
         />
       </AspectRatio>
-      <Flex padding={["5%", "15px"]} flexDir="column"  rowGap="5px" >
-        <Text textAlign="center">{recipe.mealType}</Text>
-        <Heading size="lg" textAlign="center">{recipe.label}</Heading>
+      <Flex padding={["5%", "15px"]} flexDir="column" rowGap="5px">
+        <Text textAlign="center" fontSize="sm">{recipe.mealType}</Text>
+        <Text fontSize="1.4em" fontWeight="bold" textAlign="center" py="5px">{recipe.label}</Text>
         <HealthLabels recipe={recipe} />
         <DietLabels recipe={recipe} />
+        <Cautions recipe={recipe} />
         <Center columnGap="5px">
           <Text>Dishtype:</Text>
           <Text fontWeight="bold">{recipe.dishType}</Text>
         </Center>
-        <Cautions recipe={recipe} />
       </Flex>
     </Container>
   );

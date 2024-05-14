@@ -22,9 +22,9 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
   ));
 
   return (
-    <Flex flexDirection="column" alignItems="center" px="15px">
+    <Flex flexDirection="column" alignItems="center" p={{ base: "5vw", md: "3vw", xl: "2vw"}}>
       <Search changeFn={handleChange} />
-      <SimpleGrid width="100%" minChildWidth="250px" spacing="15px">
+      <SimpleGrid width="100%" minChildWidth={{ base: "250px", lg: "300px"}} spacing={{ base: "5vw", md: "3vw", xl: "2vw"}}>
         {matchedRecipeList}
       </SimpleGrid>
     </Flex>

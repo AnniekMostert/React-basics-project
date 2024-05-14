@@ -2,7 +2,7 @@ import { Flex, Input, Checkbox, Stack } from "@chakra-ui/react";
 
 export const Search = ({ changeFn }) => {
   return (
-    <Flex direction="column" my={3} width={{ base: "100%", sm: "70%", md: "500px" }} gap="5px" alignItems={["start", "center"]}>
+    <Flex direction="column" mb={{ base: "5vw", md: "3vw", xl: "2vw"}} width={{ base: "100%", sm: "70%", md: "500px" }} gap="5px" alignItems={["start", "center"]}>
       <Input
         onChange={changeFn}
         placeholder="Search for recipes"
