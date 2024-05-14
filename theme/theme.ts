@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import { InputTheme } from "./InputTheme";
 import { TagTheme } from "./TagTheme";
+import { CheckboxTheme } from "./CheckboxTheme";
 
 export const theme = extendTheme({
   colors: {
@@ -23,5 +24,6 @@ export const theme = extendTheme({
   components: {
     Input: InputTheme,
     Tag: TagTheme,
+    Checkbox: CheckboxTheme,
   },
 });

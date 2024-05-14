@@ -40,10 +40,7 @@ export const TagTheme = defineMultiStyleConfig({
     diet: diet,
     caution: caution,
   },
+  defaultProps: {
+    size: "sm",
+  },
 });
-
-// labels: {
-//     health: "#49FF00",
-//     diet: "#FBFF00",
-//     caition: "#FF0000",
-//   }
