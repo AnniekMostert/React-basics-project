@@ -1,11 +1,17 @@
 import { Flex, Tag } from "@chakra-ui/react";
 
-export const DietLabels = ({recipe}) => {
+export const DietLabels = ({ recipe }) => {
+  const recipeDietLabels = recipe.dietLabels.map((label) => (
+    <Tag key={label} variant="diet">
+      {label}
+    </Tag>
+  ));
+
   return (
-    <Flex justify="space-evenly" wrap="wrap" rowGap="5px">
-      {recipe.dietLabels.map((label) => (
-        <Tag key={label} variant="diet" >{label}</Tag>
-      ))}
-    </Flex>
+    recipeDietLabels.length != 0 && (
+      <Flex justify="center" wrap="wrap" gap="5px">
+        {recipeDietLabels}
+      </Flex>
+    )
   );
 };

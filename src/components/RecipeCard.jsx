@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 export const RecipeCard = ({ recipe, clickFn }) => {
+
   return (
     <Container
       cursor={"pointer"}
@@ -28,12 +29,16 @@ export const RecipeCard = ({ recipe, clickFn }) => {
         />
       </AspectRatio>
       <Flex padding={["5%", "15px"]} flexDir="column" rowGap="5px">
-        <Text textAlign="center" fontSize="sm">{recipe.mealType}</Text>
-        <Text fontSize="1.4em" fontWeight="bold" textAlign="center" py="5px">{recipe.label}</Text>
+        <Text textAlign="center" fontSize="sm">
+          {recipe.mealType}
+        </Text>
+        <Text fontSize="1.4em" fontWeight="bold" textAlign="center" py="5px" borderY="2px solid" borderColor="palette.yellowLight">
+          {recipe.label}
+        </Text>
         <HealthLabels recipe={recipe} />
         <DietLabels recipe={recipe} />
         <Cautions recipe={recipe} />
-        <Center columnGap="5px">
+        <Center columnGap="5px" borderTop="2px solid" borderTopColor="palette.yellowLight" >
           <Text>Dishtype:</Text>
           <Text fontWeight="bold">{recipe.dishType}</Text>
         </Center>
