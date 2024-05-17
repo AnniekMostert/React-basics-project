@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { RecipeCard } from "../components/RecipeCard";
-import { SimpleGrid, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { Search } from "../components/Search";
+import { MatchedRecipeGrid } from "../components/MatchedRecipeGrid";
 
 export const RecipeListPage = ({ recipeList, clickFn }) => {
-  const [testRecipeList, setTestRecipeList] = useState({recipeList});
   const [searchField, setSearchField] = useState("");
   const [veganFilter, setVeganFilter] = useState(false);
   const [vegetFilter, setVegetFilter] = useState(false);
@@ -43,10 +42,6 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
     return recipe.label.toLowerCase().includes(searchField.toLowerCase());
   });
 
-  const matchedRecipeList = matchedRecipes.map(({ recipe }) => (
-    <RecipeCard key={recipe.label} recipe={recipe} clickFn={clickFn} />
-  ));
-
   return (
     <Flex
       flexDirection="column"
@@ -59,13 +54,7 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
         changeVegetFilterFn={handleVegetFilterChange}
         changePescFilterFn={handlePescFilterChange}
       />
-      <SimpleGrid
-        width="100%"
-        minChildWidth={{ base: "250px", lg: "300px" }}
-        spacing={{ base: "5vw", md: "3vw", xl: "2vw" }}
-      >
-        {matchedRecipeList}
-      </SimpleGrid>
+    <MatchedRecipeGrid matchedRecipes={matchedRecipes} clickFn={clickFn}/>
     </Flex>
   );
 };
