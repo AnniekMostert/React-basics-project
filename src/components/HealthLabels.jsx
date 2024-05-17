@@ -13,7 +13,6 @@ export const HealthLabels = ({ recipe }) => {
     vegetarian && <Tag key="vegetarian" variant="health">{vegetarian}</Tag>,
     pescatarian && <Tag key="pescatarian" variant="health">{pescatarian}</Tag>,
   ].filter((label) => label != undefined);
-  console.log(recipeHealthLabels)
 
   return (
     recipeHealthLabels.length != 0 && (

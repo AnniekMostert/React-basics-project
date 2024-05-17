@@ -1,19 +1,44 @@
 import { useState } from "react";
 import { RecipeCard } from "../components/RecipeCard";
-import {
-  SimpleGrid,
-  Flex,
-} from "@chakra-ui/react";
+import { SimpleGrid, Flex } from "@chakra-ui/react";
 import { Search } from "../components/Search";
 
 export const RecipeListPage = ({ recipeList, clickFn }) => {
   const [searchField, setSearchField] = useState("");
+  const [veganFilter, setVeganFilter] = useState(false);
+  const [vegetFilter, setVegetFilter] = useState(false);
+  const [pescFilter, setPescFilter] = useState(false);
 
-  const handleChange = (event) => {
-    return setSearchField(event.target.value);
+  const handleSearchChange = (event) => setSearchField(event.target.value);
+  const handleVeganFilterChange = () => setVeganFilter(!veganFilter);
+  const handleVegetFilterChange = () => setVegetFilter(!vegetFilter);
+  const handlePescFilterChange = () => setPescFilter(!pescFilter);
+
+  const veganRecipeList = () => {
+    if (veganFilter) {
+      return recipeList.filter(({ recipe }) =>
+        recipe.healthLabels.includes("Vegan")
+      );
+    } else return recipeList;
   };
 
-  const matchedRecipes = recipeList.filter(({ recipe }) => {
+  const vegetRecipeList = () => {
+    if (vegetFilter) {
+      return veganRecipeList().filter(({ recipe }) =>
+        recipe.healthLabels.includes("Vegetarian")
+      );
+    } else return veganRecipeList();
+  };
+
+  const pescRecipeList = () => {
+    if (pescFilter) {
+      return vegetRecipeList().filter(({ recipe }) =>
+        recipe.healthLabels.includes("Pescatarian")
+      );
+    } else return vegetRecipeList();
+  };
+
+  const matchedRecipes = pescRecipeList().filter(({ recipe }) => {
     return recipe.label.toLowerCase().includes(searchField.toLowerCase());
   });
 
@@ -22,9 +47,22 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
   ));
 
   return (
-    <Flex flexDirection="column" alignItems="center" p={{ base: "5vw", md: "3vw", xl: "2vw"}}>
-      <Search changeFn={handleChange} />
-      <SimpleGrid width="100%" minChildWidth={{ base: "250px", lg: "300px"}} spacing={{ base: "5vw", md: "3vw", xl: "2vw"}}>
+    <Flex
+      flexDirection="column"
+      alignItems="center"
+      p={{ base: "5vw", md: "3vw", xl: "2vw" }}
+    >
+      <Search
+        changeSearchFn={handleSearchChange}
+        changeVeganFilterFn={handleVeganFilterChange}
+        changeVegetFilterFn={handleVegetFilterChange}
+        changePescFilterFn={handlePescFilterChange}
+      />
+      <SimpleGrid
+        width="100%"
+        minChildWidth={{ base: "250px", lg: "300px" }}
+        spacing={{ base: "5vw", md: "3vw", xl: "2vw" }}
+      >
         {matchedRecipeList}
       </SimpleGrid>
     </Flex>

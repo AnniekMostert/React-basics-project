@@ -7,7 +7,6 @@ import { data } from "./utils/data";
 const recipeList = data.hits;
 
 export const App = () => {
-  console.log(recipeList[0].recipe.label)
   const [selectedRecipe, setSelectedRecipe] = useState();
 
   return (
