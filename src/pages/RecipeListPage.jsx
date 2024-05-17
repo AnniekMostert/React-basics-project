@@ -4,6 +4,7 @@ import { SimpleGrid, Flex } from "@chakra-ui/react";
 import { Search } from "../components/Search";
 
 export const RecipeListPage = ({ recipeList, clickFn }) => {
+  const [testRecipeList, setTestRecipeList] = useState({recipeList});
   const [searchField, setSearchField] = useState("");
   const [veganFilter, setVeganFilter] = useState(false);
   const [vegetFilter, setVegetFilter] = useState(false);
