@@ -121,7 +121,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 1912.5630000050721,
         "totalWeight": 440.7789215947101,
-        "totalTime": 0,
+        "totalTime": 25,
         "cuisineType": [
           "american"
         ],
@@ -415,7 +415,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 2875.644,
         "totalWeight": 1800.7,
-        "totalTime": 0,
+        "totalTime": 75,
         "cuisineType": [
           "mexican"
         ],
@@ -1711,7 +1711,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 2690.7571038625,
         "totalWeight": 1183.49332375,
-        "totalTime": 0,
+        "totalTime": 45,
         "cuisineType": [
           "italian"
         ],
@@ -2123,7 +2123,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 5112.068417170556,
         "totalWeight": 3132.645350277778,
-        "totalTime": 0,
+        "totalTime": 35,
         "cuisineType": [
           "nordic"
         ],
@@ -4312,7 +4312,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 1136.8929999991822,
         "totalWeight": 795.030208333604,
-        "totalTime": 0,
+        "totalTime": 30,
         "cuisineType": [
           "nordic"
         ],
@@ -5656,7 +5656,7 @@ export const data = JSON.parse(`{
       "recipe": {
         "label": "Cajun Pork Pinwheels",
         "image": "https://media.wincacademy.nl/react/images/final-project/cayun-pork-pinwheel.jpeg",
-        "url": "https://www.bigoven.com/recipe/cajun-pork-pinwheels/158806",
+        "url": "https://www.yummly.co.uk/recipe/Cajun-Pork-Pinwheels-2247932",
         "yield": 6,
         "dietLabels": [
           "High-Protein",
@@ -5811,7 +5811,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 1277.8849994333577,
         "totalWeight": 1212.4618233334124,
-        "totalTime": 0,
+        "totalTime": 65,
         "cuisineType": [
           "american"
         ],
@@ -6549,7 +6549,7 @@ export const data = JSON.parse(`{
         ],
         "calories": 1565.9824562250003,
         "totalWeight": 2544.6589887499995,
-        "totalTime": 0,
+        "totalTime": 35,
         "cuisineType": [
           "italian"
         ],

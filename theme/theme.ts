@@ -1,7 +1,13 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, defineStyleConfig, defineStyle } from "@chakra-ui/react";
 import { InputTheme } from "./InputTheme";
 import { TagTheme } from "./TagTheme";
 import { CheckboxTheme } from "./CheckboxTheme";
+
+const solid = defineStyle({
+  borderColor: "palette.yellowLight",
+  borderTopWidth: "1.5px",
+  borderBottomWidth: "1.5px",
+});
 
 export const theme = extendTheme({
   colors: {
@@ -10,6 +16,7 @@ export const theme = extendTheme({
       yellowDark: "#F1C550",
       greenLight: "#A1C45A",
       greenDark: "#4b5f22",
+      yellowBackground: "rgba(255, 249, 224, 0.5)",
     },
   },
   styles: {
@@ -24,5 +31,8 @@ export const theme = extendTheme({
     Input: InputTheme,
     Tag: TagTheme,
     Checkbox: CheckboxTheme,
+    Divider: defineStyleConfig({
+      variants: { solid },
+    }),
   },
 });

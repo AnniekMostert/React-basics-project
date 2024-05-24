@@ -9,6 +9,8 @@ const baseStyle = definePartsStyle({
     bgColor: "white",
     textTransform: "uppercase",
     boxShadow: "none",
+    marginY: "2px",
+    justifyContent: "center"
   },
 });
 

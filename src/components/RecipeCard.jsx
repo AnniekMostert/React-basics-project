@@ -8,6 +8,7 @@ import {
   Center,
   AspectRatio,
   Flex,
+  Divider,
 } from "@chakra-ui/react";
 
 export const RecipeCard = ({ recipe, clickFn }) => {
@@ -32,14 +33,20 @@ export const RecipeCard = ({ recipe, clickFn }) => {
         <Text textAlign="center" fontSize="sm">
           {recipe.mealType}
         </Text>
-        <Text fontSize="1.4em" fontWeight="bold" textAlign="center" py="5px" borderY="2px solid" borderColor="palette.yellowLight">
+        <Text fontSize="1.4em" fontWeight="bold" textAlign="center">
           {recipe.label}
         </Text>
-        <HealthLabels recipe={recipe} />
-        <DietLabels recipe={recipe} />
-        <Cautions recipe={recipe} />
-        <Center columnGap="5px" borderTop="2px solid" borderTopColor="palette.yellowLight" >
-          <Text>Dishtype:</Text>
+
+        <Divider />
+
+        <HealthLabels recipe={recipe} recipePage={false}/>
+        <DietLabels recipe={recipe} recipePage={false} />
+        <Cautions recipe={recipe} recipePage={false} />
+
+        <Divider />
+
+        <Center columnGap="5px">
+          <Text>Dish type:</Text>
           <Text fontWeight="bold">{recipe.dishType}</Text>
         </Center>
       </Flex>
