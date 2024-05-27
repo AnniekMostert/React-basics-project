@@ -4,7 +4,7 @@ export const Nutrients = ({ totalNutrients }) => {
   const NutrientGridItems = ({ nutrient }) => {
     return (
       <>
-        <GridItem>{nutrient.label}</GridItem>
+        <GridItem>{nutrient.label + ":"}</GridItem>
         <GridItem>{Math.round(nutrient.quantity)}</GridItem>
         <GridItem>{nutrient.unit}</GridItem>
       </>
@@ -13,7 +13,7 @@ export const Nutrients = ({ totalNutrients }) => {
 
   return (
     <>
-    <Text fontWeight="bold">Total Nutrients:</Text>
+    <Text fontWeight="bold" marginStart={{md: "1em"}}>Total Nutrients:</Text>
     <SimpleGrid templateColumns="12ch 7ch 5ch" marginStart="1em">
       <NutrientGridItems nutrient={totalNutrients.ENERC_KCAL} />
       <NutrientGridItems nutrient={totalNutrients.PROCNT} />

@@ -8,8 +8,8 @@ export const Ingredients = ({ recipe }) => {
   ));
 
   return (
-    <UnorderedList styleType="none" >
-      <Text fontWeight="bold" marginInlineStart="-1em">Ingredients:</Text>
+    <UnorderedList styleType="circle" marginStart="2.1em" >
+      <Text fontWeight="bold" marginInlineStart={["-2.1em", 0]}>Ingredients:</Text>
       {ingredientList}
     </UnorderedList>
   );

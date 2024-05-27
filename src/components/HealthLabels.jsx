@@ -26,29 +26,22 @@ export const HealthLabels = ({ recipe, recipePage }) => {
     ),
   ].filter((label) => label != undefined);
 
-  const recipeHealthLabels = recipePage ? (
+  return recipePage ? (
     <>
-      <Text fontSize="sm">
-        Health labels:
-      </Text>
-      <SimpleGrid minChildWidth="127px" spacing="5px">
+      <Text fontSize="sm">Health labels:</Text>
+      <SimpleGrid minChildWidth={120} spacing="5px">
         {recipe.healthLabels.map((label) => (
-          <Tag
-            key={label}
-            variant="health"
-          >
+          <Tag key={label} variant="health">
             {label}
           </Tag>
         ))}
       </SimpleGrid>
     </>
   ) : (
-    recipe.healthLabels.length != 0 && (
+    partialHealthLabelArray.length != 0 && (
       <Flex justify="center" wrap="wrap" gap="5px">
         {partialHealthLabelArray}
       </Flex>
     )
   );
-
-  return recipeHealthLabels;
 };

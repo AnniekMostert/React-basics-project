@@ -1,4 +1,4 @@
-import { Divider, Flex, SimpleGrid, Tag, Text } from "@chakra-ui/react";
+import { Flex, SimpleGrid, Tag, Text } from "@chakra-ui/react";
 
 export const Cautions = ({ recipe, recipePage }) => {
   const recipeCautions = recipe.cautions.map((label) => (
@@ -15,7 +15,6 @@ export const Cautions = ({ recipe, recipePage }) => {
         <SimpleGrid minChildWidth="127px" spacing="5px">
           {recipeCautions}
         </SimpleGrid>
-        <Divider />
       </>
     ) : (
       <Flex justify="center" wrap="wrap" gap="5px">

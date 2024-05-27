@@ -6,11 +6,12 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
   container: {
-    bgColor: "white",
+    bgColor: "palette.yellowLight",
     textTransform: "uppercase",
     boxShadow: "none",
-    marginY: "2px",
-    justifyContent: "center"
+    margin: "2px",
+    justifyContent: "center",
+    textAlign: "center",
   },
 });
 
