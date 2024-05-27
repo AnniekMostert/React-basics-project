@@ -13,8 +13,8 @@ export const Nutrients = ({ totalNutrients }) => {
 
   return (
     <>
-    <Text fontWeight="bold" marginStart={{md: "1em"}}>Total Nutrients:</Text>
-    <SimpleGrid templateColumns="12ch 7ch 5ch" marginStart="1em">
+    <Text fontWeight="bold">Total Nutrients:</Text>
+    <SimpleGrid templateColumns="12ch 7ch 5ch" marginStart={{base: "1em", sm: 0}}>
       <NutrientGridItems nutrient={totalNutrients.ENERC_KCAL} />
       <NutrientGridItems nutrient={totalNutrients.PROCNT} />
       <NutrientGridItems nutrient={totalNutrients.FAT} />

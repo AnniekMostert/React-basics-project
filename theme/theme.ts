@@ -3,8 +3,9 @@ import { InputTheme } from "./InputTheme";
 import { TagTheme } from "./TagTheme";
 import { CheckboxTheme } from "./CheckboxTheme";
 
-const solid = defineStyle({
+const solidDivider = defineStyle({
   borderColor: "palette.yellowLight",
+  opacity: 0.5,
   borderTopWidth: "1.5px",
   borderBottomWidth: "1.5px",
 });
@@ -32,7 +33,7 @@ export const theme = extendTheme({
     Tag: TagTheme,
     Checkbox: CheckboxTheme,
     Divider: defineStyleConfig({
-      variants: { solid },
+      variants: { solid: solidDivider },
     }),
   },
 });

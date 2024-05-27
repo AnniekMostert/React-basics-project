@@ -41,6 +41,7 @@ export const RecipePage = ({ recipe, clickFn }) => {
           _focusVisible={{ shadow: "none" }}
           width={{base: "100%", sm: "200px"}}
           mx="auto"
+          marginTop="5px"
           >
           Back
         </Button>

@@ -1,4 +1,4 @@
-import { Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { Info } from "./Info";
 import { Ingredients } from "./Ingredients";
 import { HealthLabels } from "../HealthLabels";
@@ -7,21 +7,25 @@ import { Cautions } from "../Cautions";
 import { Nutrients } from "./Nutrients";
 
 export const RecipePageBody = ({ recipe }) => {
-  const templateAreasBase = `"info"
+  const templateAreasBase = `
+    "info"
     "ingr"
     "hl"
     "dl"
     "cau"
-    "div"
-    "nutr"`;
-  const templateAreasSm = `"info ingr"
+    "nutr"
+    `;
+  const templateAreasSm = `
+    "info nutr"
+    "ingr ingr"
     "hl hl"
     "dl cau"
-    "div div"
-    "nutr nutr"`;
-  const templateAreasMd = `"info ingr nutr"
-  "div div div"
-  "hl dl cau"`;
+    `;
+  const templateAreasMd = `
+    "info ingr nutr"
+    "hl hl dl"
+    "hl hl cau"
+    `;
 
   return (
     <Grid
@@ -30,27 +34,36 @@ export const RecipePageBody = ({ recipe }) => {
         sm: templateAreasSm,
         md: templateAreasMd,
       }}
+      bgColor="palette.yellowBackground"
+      rowGap="1px"
     >
-      <GridItem area="info">
+      <GridItem area="info" bgColor="palette.yellowDark" paddingBottom="5px" paddingRight={{sm: "5px"}}>
         <Info recipe={recipe} />
       </GridItem>
-      <GridItem area="ingr">
+      <GridItem area="ingr" bgColor="palette.yellowDark" paddingTop={{base: "5px", md: 0}} paddingBottom="5px" paddingX={{md: "5px"}}>
         <Ingredients recipe={recipe} />
       </GridItem>
-      <GridItem area="hl">
+      <GridItem area="hl" bgColor="palette.yellowDark" paddingY="5px">
         <HealthLabels recipe={recipe} recipePage={true} />
       </GridItem>
-      <GridItem area="dl">
+      <GridItem
+        area="dl"
+        bgColor="palette.yellowDark"
+        paddingY="5px"
+        paddingRight={{ sm: "5px" }}
+      >
         <DietLabels recipe={recipe} recipePage={true} />
       </GridItem>
-      <GridItem area="cau">
+      <GridItem
+        area="cau"
+        bgColor="palette.yellowDark"
+        paddingY="5px"
+        paddingLeft={{ sm: "5px" }}
+      >
         <Cautions recipe={recipe} recipePage={true} />
       </GridItem>
-      <GridItem area="nutr">
+      <GridItem area="nutr" bgColor="palette.yellowDark" paddingTop={{base: "5px", sm: 0}} paddingBottom={{sm: "5px"}} paddingLeft={{sm: "5px"}}>
         <Nutrients totalNutrients={recipe.totalNutrients} />
-      </GridItem>
-      <GridItem area="div">
-        <Divider my="5px" />
       </GridItem>
     </Grid>
   );

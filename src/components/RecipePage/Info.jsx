@@ -2,7 +2,7 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 
 export const Info = ({ recipe }) => {
   return (
-    <SimpleGrid columns="2" columnGap="5px" maxWidth="255" gridTemplateColumns="1fr 100px">
+    <SimpleGrid columns="2" columnGap="5px" maxWidth="230" gridTemplateColumns="1fr 100px">
       <Text>Meal type: </Text>
       <Text fontWeight="bold">{recipe.mealType}</Text>
       <Text>Dish type:</Text>
