@@ -5,14 +5,13 @@ import {
   Container,
   Image,
   Text,
-  Center,
   AspectRatio,
   Flex,
   Divider,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 export const RecipeCard = ({ recipe, clickFn }) => {
-
   return (
     <Container
       cursor={"pointer"}
@@ -29,26 +28,35 @@ export const RecipeCard = ({ recipe, clickFn }) => {
           borderTopRadius="10px"
         />
       </AspectRatio>
-      <Flex padding={["5%", "15px"]} flexDir="column" rowGap="5px">
-        <Text textAlign="center" fontSize="sm">
-          {recipe.mealType}
-        </Text>
+      <Flex padding={["5%", "15px"]} flexDir="column" rowGap="5px" alignItems="center">
         <Text fontSize="1.4em" fontWeight="bold" textAlign="center">
           {recipe.label}
         </Text>
 
         <Divider />
 
-        <HealthLabels recipe={recipe} recipePage={false}/>
+        <HealthLabels recipe={recipe} recipePage={false} />
         <DietLabels recipe={recipe} recipePage={false} />
         <Cautions recipe={recipe} recipePage={false} />
 
         <Divider />
 
-        <Center columnGap="5px">
-          <Text>Dish type:</Text>
+        <SimpleGrid
+          columns="2"
+          columnGap="10px"
+          maxWidth="310px"
+        >
+          <Text>Meal type</Text>
+          <Text fontWeight="bold" whiteSpace="pre-line">
+            {recipe.mealType.length === 1
+              ? recipe.mealType[0]
+              : `${recipe.mealType[0]}\n${recipe.mealType[1]}`}
+          </Text>
+          <Text>Dish type</Text>
           <Text fontWeight="bold">{recipe.dishType}</Text>
-        </Center>
+          <Text>Cooking time</Text>
+          <Text fontWeight="bold">{recipe.totalTime + " minutes"}</Text>
+        </SimpleGrid>
       </Flex>
     </Container>
   );

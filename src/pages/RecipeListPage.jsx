@@ -39,7 +39,10 @@ export const RecipeListPage = ({ recipeList, clickFn }) => {
   };
 
   const matchedRecipes = pescRecipeList().filter(({ recipe }) => {
-    return recipe.label.toLowerCase().includes(searchField.toLowerCase());
+    const matchesName = recipe.label.toLowerCase().includes(searchField.toLowerCase());
+    const matchesHealthLabels = recipe.healthLabels.some(label => label.toLowerCase().includes(searchField.toLowerCase()))
+    const matchesIngredients = recipe.ingredientLines.some(ingredient => ingredient.toLowerCase().includes(searchField.toLowerCase()))
+    return matchesName || matchesHealthLabels || matchesIngredients;
   });
 
   return (

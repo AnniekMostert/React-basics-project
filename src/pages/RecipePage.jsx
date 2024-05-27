@@ -12,9 +12,9 @@ export const RecipePage = ({ recipe, clickFn }) => {
   return (
     <Container
       width="100%"
-      maxW="100%"
-      p={{ base: "5vw", md: "3vw", xl: "2vw" }}
-      m={0}
+      maxW="992px"
+      p={{ base: "5vw", md: "3vw" }}
+      m={{base: 0, lg: "auto"}}
     >
       <ImageContainer recipe={recipe} clickFn={clickFn} />
       <Flex
