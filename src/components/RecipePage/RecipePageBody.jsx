@@ -9,9 +9,12 @@ import { DetermineTemplateAreas } from "./DetermineTemplateAreas";
 
 export const RecipePageBody = ({ recipe }) => {
   const templateAreas = DetermineTemplateAreas(recipe);
-  const dlCau = () => recipe.dietLabels.length != 0 && recipe.cautions.length != 0;
-  const dl = () => recipe.dietLabels.length != 0 && recipe.cautions.length === 0;
-  const cau = () => recipe.cautions.length != 0 && recipe.dietLabels.length === 0;
+  const dlCau = () =>
+    recipe.dietLabels.length != 0 && recipe.cautions.length != 0;
+  const dl = () =>
+    recipe.dietLabels.length != 0 && recipe.cautions.length === 0;
+  const cau = () =>
+    recipe.cautions.length != 0 && recipe.dietLabels.length === 0;
 
   return (
     <Grid
@@ -77,21 +80,23 @@ export const RecipePageBody = ({ recipe }) => {
           bgColor="palette.yellowDark"
           paddingY="5px"
           paddingLeft={{ md: "10px" }}
-          paddingRight={{sm: "50%", md: 0}}
+          paddingRight={{ sm: "50%", md: 0 }}
         >
           <DietLabels recipe={recipe} recipePage={true} />
         </GridItem>
       )}
-{cau() && (<GridItem
-        area="cau"
-        bgColor="palette.yellowDark"
-        paddingY="5px"
-        paddingLeft={{ md: "10px" }}
-        paddingRight={{sm: "50%", md: 0}}
-      >
-        <Cautions recipe={recipe} recipePage={true} />
-      </GridItem>)}
-      
+      {cau() && (
+        <GridItem
+          area="cau"
+          bgColor="palette.yellowDark"
+          paddingY="5px"
+          paddingLeft={{ md: "10px" }}
+          paddingRight={{ sm: "50%", md: 0 }}
+        >
+          <Cautions recipe={recipe} recipePage={true} />
+        </GridItem>
+      )}
+
       <GridItem
         area="nutr"
         bgColor="palette.yellowDark"

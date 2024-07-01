@@ -28,7 +28,12 @@ export const RecipeCard = ({ recipe, clickFn }) => {
           borderTopRadius="10px"
         />
       </AspectRatio>
-      <Flex padding={["5%", "15px"]} flexDir="column" rowGap="5px" alignItems="center">
+      <Flex
+        padding={["5%", "15px"]}
+        flexDir="column"
+        rowGap="5px"
+        alignItems="center"
+      >
         <Text fontSize="1.4em" fontWeight="bold" textAlign="center">
           {recipe.label}
         </Text>
@@ -41,11 +46,7 @@ export const RecipeCard = ({ recipe, clickFn }) => {
 
         <Divider />
 
-        <SimpleGrid
-          columns="2"
-          columnGap="10px"
-          maxWidth="310px"
-        >
+        <SimpleGrid columns="2" columnGap="10px" maxWidth="310px">
           <Text>Meal type</Text>
           <Text fontWeight="bold" whiteSpace="pre-line">
             {recipe.mealType.length === 1
